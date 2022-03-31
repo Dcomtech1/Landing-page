@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hall.css">
+</head>
+<body class="main">
+
+
+    <div class="function">
+        <div class="allocate"   style="color: white;">ALLOCATE SEATS<span id="click">&#8631;</span></div>
+        <div class="allocate_content" id="seat_allocator">
+            <p class="label" style="color: white;">Seat Number</p>
+            <input type="text" class="input" id="sn">
+            <p class="label" style="color: white;">Name</p>
+            <input type="text" class="input" id="nam">
+            <div class="allocate"  style="width: 40%;  color: white;" ><button onclick="seatAllocator()"> Allocate</button></div>
+        </div>
+    <!-- <div class="function">
+        <div class="allocate" align="center" onmouseover="seatOpener()">CREATE SEATS<span id="click">&#8631;</span></div>
+        <div class="allocate_content" id="seat_creator">
+            <p class="label">Number of Seats</p>
+            <input type="text" class="input" id="no_of_seats">
+            <div class="allocate" align="center" style="width: 40%; margin-left: 100px;" onclick="seatCreator()">Create</div>
+        </div>
+    </div> -->
+
+  <table id="chair"></table>
+
+
+
+  <script>
+
+var seat = [];
+      chair = document.getElementById("chair");
+    //   localStorage.getItem(hallChair)
+    chairs = []
+    chairs = JSON.parse(localStorage.getItem("hallChair"));
+             chair.innerHTML = chairs;
+
+    // function add(){
+    //     alert("dog")
+    // }
+
+
+function seatAllocator(){
+
+s = sn.value;
+na = nam.value;
+
+
+for(i=0; i<sn.value; i++){
+
+    if(seat[sn.value]=="<td>" + sn.value + "</td>"){
+    seat[sn.value]="<td onclick='print()'>" + na.toUpperCase() + "</td>";
+    chair.innerHTML=seat;
+    occSeat++;
+    ticketNumber++;
+    }else if(seat[sn.value]=="<td>" + sn.value + "</td></tr>"){
+    seat[sn.value]="<td onclick='print()'>" + na.toUpperCase() + "</td></tr>";
+    chair.innerHTML=seat;
+    occSeat++;
+    ticketNumber++;
+    }
+    else if(sn.value>i){
+    alert("Seat not available -- Please select between " + 1 + " - " + i)
+        }
+    else{
+        confirm("Seat already occupied but if you wish to change click OK");
+        if(confirm){
+        seat[sn.value]="<td onclick='print()'>" + na.toUpperCase() + "</td>";
+        chair.innerHTML=seat;
+        ticketNumber++;
+        if (sn.value%10==0){
+            seat[sn.value]="<td onclick='print()'>" + na.toUpperCase() + "</td></tr>";
+        chair.innerHTML=seat;
+        ticketNumber++;
+        }
+        }
+    }
+}
+}
+
+   </script>
+</body>
+</html>

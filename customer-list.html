@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="safe.css">
+    <title>Document</title>
+</head>
+<body class="main">
+    <input type="text" name="" id="uName" placeholder="username"><input type="password" name="" id="password" placeholder="password"><button onclick="reg()" >Submit</button><button style="display: none;" id="dem"onclick="save()">Update</button>
+
+
+    <div id="1">
+
+
+    </div>
+</div>
+
+
+
+   
+
+<script>reg=()=>
+{
+    let arr;
+        if (! localStorage.getItem('cus') ) {
+           arr=[];
+        }
+        else{
+            arr=JSON.parse(localStorage.getItem('cus'));
+        }
+        let obj={};
+        obj.uname=uName.value;
+        // obj.Email=email.value;
+        obj.password=password.value;
+        arr.push(obj);
+        localStorage.setItem("cus", JSON.stringify(arr));
+    
+
+    var d = "";
+    // var s = document.getElementById("l").innerHTML
+    if(window.localStorage.cus){
+        jUsers = window.localStorage.getItem("cus");
+        customers = JSON.parse(jUsers);
+        console.log(customers);
+        d+="<table border='1' width = '60%'' align='center'><tr><td>S/N</td><td>Username</td><td>Password</td><td><button>delete</button></td><td><button>Edit</button></td></tr>";
+        for (let i = 0; i < customers.length; i++) {
+            d += "<tr><td>" + [i+1]+ "</td><td>"+ customers[i].uname+ "</td><td>"+customers[i].password+"</td><td><button onclick='delet("+i+")'>Clear</button></td>"+"</td><td><button onclick ='edit("+i+")''>edit</button></td></tr>";
+        }
+        d+="</table>";
+        document.getElementById('1').innerHTML = d;
+    }
+}
+
+function delet(i){
+
+    if(confirm("Are you sure?"))
+    {
+        let localCustomers=localStorage.getItem('cus');
+        let parsingCustomers=JSON.parse(localCustomers);
+           parsingCustomers.splice(i,1);
+           localStorage.setItem('cus', JSON.stringify(parsingCustomers));
+           customers();
+       location.reload();
+    }
+
+}
+
+function edit(i){
+     customer = localStorage.getItem('cus')
+     let parsingCustomers=JSON.parse(customer);
+    // for(i=0; i<parsingCustomers.length; i++)
+    // {
+    //  if(b==i){
+        dem.style.display ="block";
+      uName.value = parsingCustomers[i].uname;
+      password.value =parsingCustomers[i].password;   
+    //  }
+    // }
+}
+    save =()=> {    
+ customer = JSON.parse(window.localStorage.getItem('cus'));
+  for(let i =0; i<customer.length; i++){
+     if(uName.value == customer[i].uname){
+    {
+        customer.splice(i, 1,{
+    "name": uName.value,
+    "Password": password.value
+     });
+    }
+}
+
+result = JSON.stringify(customer);
+window.localStorage.setItem("cus", result);
+// alert(result);
+location.reload()
+}
+    }
+
+</script>
+</div>
+</body>
+</html>

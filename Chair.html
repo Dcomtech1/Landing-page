@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Ticketing</title>
+    <link rel="stylesheet" href="Chair.css">
+</head>
+<body>
+    
+        Enter the number of chiars you want <input type = "text"  id= "nofc"/> <button onclick="chairarranger()">Arrange Chairs</button>
+        How many chairs per rows do you want <input type="text"   id="rows"/>
+        <table id="hall">
+    </table><br>
+
+    <script type="text/javascript">
+        var c ;
+        function chairarranger()
+        {
+            // var u = nofc.value;
+            var r = nofc.value / rows.value;
+            var hallchairs;
+           
+                for (let x = 0; x < r; x++) {
+                    hallchairs +="<tr>"; 
+                    
+                
+            for(i=0; i<rows.value; i++)
+            {
+                // alert("joke")
+                hallchairs += `<td><span>${i+1}</span><button onclick="add()" style = "background: transparent;"><img src= 'CHAIR2.png' width='350' height='350'></button></td>`;
+            }
+            
+        }
+
+        hallchairs += "</tr>";
+
+        hall.innerHTML = hallchairs;
+
+
+        localStorage.setItem("hallChair", JSON.stringify(hallchairs))
+        // localStorage.noperRow=value
+
+    }
+
+    // function add(){
+    //     alert("${i}")
+    // }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

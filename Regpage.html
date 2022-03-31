@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Regpage.css">
+</head>
+<body>
+    <div class="main">
+    <div id="body">
+    <!-- <form>  -->
+        <center><h1><em> Welcome to David's Cinema Please input you details below to register</em></h1></center>
+<br>
+
+        <!-- <div class="form">
+            <h2>Login here</h2>
+            <input type="email" name="email" placeholder="Enter email here">
+            <input type="password" name="" placeholder="Enter Password here"> -->
+        
+     <label  for="Username">Username</label>   
+        <input type="text" id="uname" placeholder= "First Name">
+        <br>
+        <br>
+        <label  for="email">Email :</label> 
+        <input type="email"value=""placeholder= "Email" id="email">
+        <br>
+        <br>
+        <label for="Date of Birth">Date of Birth</label>
+        <input type="date"value=""placeholder= "" id="date">
+        <br>
+        <br>
+        <label  for="Year of Graduation">Year of Graduation</label>
+        <select id="Year"name="year">
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        </select>
+        <br>
+        <br>
+        <label  for="password">Password :</label> 
+        <input type="password"placeholder="Enter Password" id="password">
+        <br>
+        <br>
+         <input onclick="suBmit()" type="submit" value="Register">
+
+         <button class= "" onclick="document.location='landing-page.html'">Log in</button>
+    <!-- </form> -->
+</div>
+</div>
+
+</body>
+
+</html>
+
+
+
+
+<script>
+  
+    // if (!window.localStorage.lTUser){
+    //     var staffs = { "alluser": []};
+    //     document.getElementById("uName").focus();
+    // }
+
+//     var records = [];
+
+//     function suBmit (){
+//  {
+//          records = JSON.parse(window.localStorage.getItem("myCustomerRec"));
+//          var customerRec = {"Username" : uName.value, "Email" : email.value, "Password": password.value};
+//          customerRec.push(records);
+
+//          cN = JSON.stringify(records);
+//          window.localStorage.setItem("myCustomerRec", cN);
+
+//          alert("Congratulations" + " " + uName.value + "," + " " + " You have successfully registered to book a seat in your favourite cinema");
+    
+//     }
+
+// }
+
+
+
+
+    suBmit=()=>
+    // alert("Congratulations you have successfully registered proceed to the sign up page")
+         {
+        let arr;
+        if (! localStorage.getItem('cus') ) {
+           arr=[];
+        }else{
+            arr=JSON.parse(localStorage.getItem('cus'));
+        }
+        let obj={};
+        obj.uname= uname.value;
+        obj.email=email.value;
+        obj.password=password.value;
+        arr.push(obj);
+        localStorage.setItem("cus", JSON.stringify(arr));
+        console.log(arr);
+        alert("Congratulations you have successfully registered")
+    }
+  
+        // if (window.localStorage.lTUser);
+        // {
+        //     jUser = window.localStorage.getItem("lTUser");
+        //     staffs = JSON.parse(jUser)
+        // }
+        //   staffs.alluser.push({
+        //     "Username": uName.value,
+        //     "Email": email.value,
+        //     "Password": password.value
+        //   });
+
+       
+        //   sUser = JSON.stringify(staffs);
+        //   window.localStorage.setItem("lTUser", sUser);
+        //   console.log(staffs);
+        //   location.reload();
+          
+       
+        
+
+//    var uName = document.getElementById("uName");
+
+//     function submit (){
+//     var records = [];
+//     myCustomer = window.localStorage.getItem("myCustomerRec");
+//     records = JSON.parse("myCustomer");
+//    var customerRec = {"name": uName.value, "email": email.value,"date": date.value, "password": password.value }
+//    records.push(customerRec);
+//    console.log(customerRec);
+
+//    cj = JSON.stringify(records);
+
+//    window.localStorage.setItem("myCustomerRec", cj);
+
+//    alert("Congratulations" + " " + uName.value + " " + "You have Successfully registered");
+
+// let arr=[]
+//         let obj={};
+//         obj.name=uName.value;
+//         arr.push(obj);
+//         localStorage.setItem("david", JSON.stringify(arr));
+
+
+
+
+// {
+//         let arr;
+//         if (! localStorage.getItem('david') ) {
+//            arr=[];
+//         }else{
+//             arr=JSON.parse(localStorage.getItem('david'));
+//         }
+//         let obj={};
+//         obj.name=uName.value;
+//         obj.Email=email.value;
+//         obj.Password=password.value;
+//         arr.push(obj);
+//         localStorage.setItem("david", JSON.stringify(arr));
+//     }
+
+    </script>

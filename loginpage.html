@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="loginpage.css">
+</head>
+
+<body>
+    <!-- <div class="container"> -->
+
+    <div id="card">
+        <b>
+            <h1 align="Center" id="title">Log in</h1>
+        </b>
+
+
+        <!-- <form method="post" class="form"> -->
+        <label for="userName" class="name">Username</label>
+        <br>
+        <input type="text" id="uname" value="" placeholder="Input your Username">
+        <br>
+        <br>
+
+        <label for="passWord" class="name">Password</label>
+        <br>
+
+        <input type="password" id="password" value="" placeholder="Input your password">
+        <br>
+        <br>
+        <button id="btn" onclick="login()"> Log in </button>
+        <br>
+        <input type="checkbox">Remember me
+        <!-- </form> -->
+    </div>
+
+
+    <script>
+
+        login = () => {
+            let datas = JSON.parse(localStorage.getItem("david"));
+            // console.log(datas.length);
+
+            if (uname.value == "" || password.value == "") {
+                document.getElementById('uname').style.border = "2px solid red";
+                document.getElementById('uname').focus();
+
+            }
+
+            for (i = 0; i < datas.length; i++) {
+
+
+                if (datas[i].name = uname.value && datas[i].Password == password.value) {
+                    // alert("wel")
+                    window.open("hall.html")
+                    break;
+                }
+            }
+
+            //else (
+            // alert("incorrect username or password")
+
+            //)
+            //break;
+        }
+
+    </script>
+
+
+    //
+    <!-- function checkRec()
+
+//   let  data = JSON.parse(window.localstorage.getItem("myCustomerRec"))
+
+//     for ( i =0;  i<myCustomerRec.length; i++)
+    
+// if()
+//     {
+//     var x = j.Password
+//     var y = j.Username
+
+//     if ( uname.value == y && pword.value == x ) {
+//         alert(" Your password is correct");
+//     }
+
+//     else {
+//         alert("Invalid Username and password");
+//     } -->
+    <!-- </div> -->
+
+</body>
+
+</html>

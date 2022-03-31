@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="adminlog.css">
+</head>
+
+<body>
+    <!-- <div class="container"> -->
+
+    <div id="card">
+        <b>
+            <h1 align="Center" id="title">Log in</h1>
+        </b>
+
+
+        <!-- <form method="post" class="form"> -->
+        <label for="userName" class="name">Username</label>
+        <br>
+        <input type="text" id="name" value="" placeholder="Input your Username">
+        <br>
+        <br>
+
+        <label for="passWord" class="name">Password</label>
+        <br>
+
+        <input type="password" id="pw" value="" placeholder="Input your password">
+        <br>
+        <br>
+        <button id="btn" onclick="check()"> Log in </button>
+        <br>
+        <input type="checkbox">Remember me
+        <!-- </form> -->
+    </div>
+
+
+    <script>
+function check(){
+
+    window.open("admin.html")
+// var storedName = localStorage.getItem('name');
+// var storedPw = localStorage.getItem('pw');
+
+// var userName = document.getElementById('userName');
+// var userPw = document.getElementById('userPw');
+// var userRemember = document.getElementById("rememberMe");
+
+// if(userName.value == storedName && userPw.value == storedPw){
+//     window.open("admin.html")
+// }else{
+//     alert('Error on login');
+// }
+}
+    </script>
+
+
+        <!-- function checkRec()
+
+//   let  data = JSON.parse(window.localstorage.getItem("myCustomerRec"))
+
+//     for ( i =0;  i<myCustomerRec.length; i++)
+    
+// if()
+//     {
+//     var x = j.Password
+//     var y = j.Username
+
+//     if ( uname.value == y && pword.value == x ) {
+//         alert(" Your password is correct");
+//     }
+
+//     else {
+//         alert("Invalid Username and password");
+//     } -->
+    <!-- </div> -->
+
+</body>
+
+</html>

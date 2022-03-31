@@ -1,0 +1,33 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 
+.main{
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(cinema.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+} */
+
+
+body {
+    background-image: url("cinema.jpg");
+    background-size: cover;
+    font-weight: bold;
+    text-align: center;
+    padding: 100px;
+
+}
+
+#body {
+    border-radius: 8px;
+    background-color: black;
+    width: 300px;
+    padding: 30px;
+    color: white;
+}
+
+
